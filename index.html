@@ -1,0 +1,1057 @@
+## Special Occasions - Complete Slide Deck
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Special Occasions - A2-B1</title>
+  <style>
+    /* ===== Color Palette ===== */
+    :root {
+      --baltic-blue: #065e93;
+      --school-bus-yellow: #fdc20a;
+      --pure-red: #f70000;
+      --white: #ffffff;
+      --light-grey: #f0f2f5;
+      --warm-grey: #e8e0d5;
+      --cream: #fdfaf5;
+      --text-dark: #1a2a3a;
+      --text-medium: #4a5a6a;
+      --shadow: rgba(6, 94, 147, 0.15);
+      --border-radius: 12px;
+      --transition: 0.2s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: var(--baltic-blue);
+      color: var(--text-dark);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .presentation-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 8px 30px var(--shadow);
+      padding: 30px 35px;
+      position: relative;
+    }
+
+    #slides { position: relative; min-height: 400px; }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.25s ease;
+      padding: 20px 30px;
+      background: var(--white);
+      border-radius: 16px;
+      color: var(--text-dark);
+    }
+    .slide.active { display: block; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== Slide Number ===== */
+    .slide-number {
+      display: inline-block;
+      background: var(--baltic-blue);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== Typography ===== */
+    .slide h1 {
+      font-size: 2.8rem;
+      color: var(--baltic-blue);
+      margin-bottom: 8px;
+    }
+    .slide h2 {
+      font-size: 2.2rem;
+      color: var(--baltic-blue);
+      border-bottom: 3px solid var(--school-bus-yellow);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+    .slide h3 {
+      font-size: 1.8rem;
+      color: var(--baltic-blue);
+      border-bottom: 3px solid var(--school-bus-yellow);
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+    }
+    .slide h4 {
+      font-size: 1.3rem;
+      color: var(--baltic-blue);
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    .slide p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 10px;
+      color: var(--text-dark);
+    }
+    .slide ul, .slide ol {
+      margin-left: 20px;
+      margin-bottom: 10px;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+    .slide li { font-size: 1.1rem; margin-bottom: 2px; }
+    .slide strong { color: var(--baltic-blue); }
+    .slide em { color: var(--pure-red); font-style: italic; }
+
+    .slide table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      background: var(--cream);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 8px 0;
+    }
+    .slide table th {
+      background: var(--baltic-blue);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 1.05rem;
+    }
+    .slide table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--warm-grey);
+      color: var(--text-dark);
+      font-size: 1rem;
+    }
+    .slide table tr:last-child td { border-bottom: none; }
+
+    /* ===== Images ===== */
+    .slide img {
+      max-height: 250px;
+      width: auto;
+      margin: 10px auto;
+      border-radius: var(--border-radius);
+      border: 2px solid var(--school-bus-yellow);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      display: block;
+    }
+
+    /* ===== Cards & Boxes ===== */
+    .text-card {
+      background: var(--cream);
+      padding: 16px 20px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--baltic-blue);
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+    .text-card strong { color: var(--baltic-blue); }
+
+    .tip-box {
+      background: var(--light-grey);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-size: 0.95rem;
+      color: var(--text-medium);
+      border-left: 3px solid var(--school-bus-yellow);
+    }
+    .tip-box strong { color: var(--baltic-blue); }
+
+    .speaking-box {
+      background: var(--light-grey);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .speaking-box strong { color: var(--baltic-blue); }
+
+    .teacher-notes {
+      background: var(--cream);
+      padding: 20px 24px;
+      border-radius: 16px;
+      border: 2px solid var(--school-bus-yellow);
+    }
+    .teacher-notes h3 { border-bottom: 3px solid var(--school-bus-yellow); padding-bottom: 6px; }
+    .teacher-notes p, .teacher-notes li { color: var(--text-dark); }
+
+    /* ===== Interactive Activities ===== */
+    .activity-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+    .activity-item select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 2px solid var(--warm-grey);
+      font-family: inherit;
+      font-size: 1rem;
+      background: var(--white);
+      min-width: 160px;
+    }
+    .activity-item select.correct {
+      border-color: var(--baltic-blue);
+      background: #e6f0f5;
+    }
+    .activity-item select.incorrect {
+      border-color: var(--pure-red);
+      background: #fdd0d0;
+    }
+    .activity-item span {
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .activity-item .label-text {
+      font-weight: 600;
+      color: var(--baltic-blue);
+    }
+
+    /* ===== Grid for gap-fill (2 columns) ===== */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 20px;
+      margin: 8px 0;
+    }
+    @media (max-width: 700px) {
+      .grid-2col { grid-template-columns: 1fr; }
+    }
+
+    /* ===== Buttons ===== */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .btn {
+      padding: 10px 28px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: var(--transition);
+    }
+    .btn:active { transform: scale(0.96); }
+    .btn-check {
+      background: var(--baltic-blue);
+      color: var(--white);
+    }
+    .btn-check:hover { background: #044d7a; }
+    .btn-reset {
+      background: var(--pure-red);
+      color: var(--white);
+    }
+    .btn-reset:hover { background: #cc0000; }
+    .btn-nav {
+      background: var(--baltic-blue);
+      color: var(--white);
+      border: none;
+      padding: 10px 28px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0 8px;
+      font-family: inherit;
+      font-weight: 600;
+    }
+    .btn-nav:hover { background: #044d7a; }
+    .btn-nav:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+    .btn-nav:disabled:hover { background: var(--baltic-blue); }
+
+    .slide-nav {
+      margin-top: 20px;
+      text-align: center;
+      padding-top: 14px;
+      border-top: 2px solid var(--warm-grey);
+    }
+
+    .feedback-text {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+    .feedback-text .correct { color: var(--baltic-blue); font-weight: 600; }
+    .feedback-text .incorrect { color: var(--pure-red); }
+
+    /* ===== CC License ===== */
+    .cc-license {
+      font-size: 0.85rem;
+      color: var(--text-medium);
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 14px;
+      border-top: 2px solid var(--warm-grey);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2px;
+    }
+    .cc-license a {
+      color: var(--baltic-blue);
+      text-decoration: none;
+    }
+    .cc-license a:hover { text-decoration: underline; }
+    .cc-license img {
+      max-width: 1.5em;
+      max-height: 1.5em;
+      margin-left: 0.1em;
+      margin-right: 0.1em;
+      border: none;
+      display: inline;
+      vertical-align: middle;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 700px) {
+      .presentation-wrapper { padding: 16px; }
+      .slide { padding: 14px 18px; }
+      .slide h1 { font-size: 2rem; }
+      .slide h2 { font-size: 1.6rem; }
+      .slide p, .slide li, .activity-item span { font-size: 0.95rem; }
+      .slide img { max-height: 180px; }
+      .activity-item { flex-direction: column; align-items: stretch; }
+      .activity-item select { min-width: auto; width: 100%; }
+      .btn-row { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      .cc-license { font-size: 0.7rem; }
+      .cc-license img { max-width: 1.2em; max-height: 1.2em; }
+      .slide-number { font-size: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="presentation-wrapper">
+  <div id="slides">
+
+    <!-- ===== SLIDE 1: TITLE ===== -->
+    <section class="slide active">
+      <div class="slide-number">Slide 1</div>
+      <h1>Special Occasions</h1>
+      <h2 style="border-bottom: none; font-size: 1.8rem; color: var(--text-medium);">Invitations, Attire & Compliments</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/celebrations.png" alt="Celebratory occasion">
+      <p style="font-size: 1.3rem; color: var(--text-medium);">A2-B1 Level</p>
+      <div style="background: var(--cream); padding: 16px 20px; border-radius: var(--border-radius); margin: 12px 0; border-left: 4px solid var(--baltic-blue);">
+        <p style="font-size: 1.1rem;"><strong>Aims:</strong></p>
+        <ul>
+          <li>Talk about special occasions</li>
+          <li>Extend and respond to invitations</li>
+          <li>Give and respond to compliments</li>
+          <li>Use passive voice, reported speech, and conditionals with modals</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev" disabled>Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 2: WARM-UP ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 2</div>
+      <h2>Warm-Up: Special Occasions</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 12px;">Work in pairs. Discuss these questions.</p>
+      <div style="background: var(--cream); padding: 16px 20px; border-radius: var(--border-radius); border-left: 4px solid var(--school-bus-yellow);">
+        <ol style="font-size: 1.1rem; line-height: 1.8;">
+          <li><strong>What special occasions do you celebrate with your family?</strong></li>
+          <li><strong>What do you usually wear to a wedding? A birthday party? A job interview?</strong></li>
+          <li><strong>Who do you invite to your celebrations?</strong></li>
+          <li><strong>When was the last time you received an invitation? What was it for?</strong></li>
+        </ol>
+      </div>
+      <div class="tip-box">
+        <p style="font-size: 1rem;"><strong>Vocabulary:</strong> wedding, birthday, anniversary, graduation, engagement, dinner party, celebration, guest, host, invitation</p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 3: VOCABULARY - OCCASIONS ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 3</div>
+      <h2>Vocabulary: Special Occasions</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/Celebration2.png" alt="Special occasions collage">
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px; margin: 8px 0;">
+        <p style="font-size: 1.05rem;"><strong>Match the occasion with its description:</strong></p>
+      </div>
+      <div id="occasionActivity"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" id="checkOccasions">Check Answers</button>
+        <button class="btn btn-reset" id="resetOccasions">Reset</button>
+      </div>
+      <div class="feedback-text" id="occasionFeedback"></div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 4: VOCABULARY - ATTIRE ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 4</div>
+      <h2>Vocabulary: Attire</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/FormalCasual.png" alt="Different attire styles">
+      <div style="background: var(--cream); padding: 14px 18px; border-radius: var(--border-radius); margin: 8px 0;">
+        <p style="font-size: 1.05rem;"><strong>Formal:</strong> suit, tuxedo, evening gown, cocktail dress</p>
+        <p style="font-size: 1.05rem;"><strong>Semi-formal:</strong> blazer, dress shirt, skirt and blouse</p>
+        <p style="font-size: 1.05rem;"><strong>Casual:</strong> jeans, t-shirt, sundress, shorts</p>
+        <p style="font-size: 1.05rem;"><strong>Accessories:</strong> tie, bow tie, cufflinks, handbag, jewellery, scarf</p>
+      </div>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px;">
+        <p style="font-size: 1rem;"><strong>Practice:</strong> In pairs, describe what you would wear to:</p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>A wedding</li>
+          <li>A job interview</li>
+          <li>A birthday party at a friend's house</li>
+          <li>A formal dinner</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 5: LISTENING ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 5</div>
+      <h2>Listening: Describing an Occasion</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Listen to the description and answer the questions. (Teacher reads or plays audio.)</p>
+      <div style="background: var(--cream); padding: 14px 18px; border-radius: var(--border-radius); margin: 8px 0;">
+        <ol style="font-size: 1.05rem; line-height: 1.8;">
+          <li><strong>What was the occasion?</strong></li>
+          <li><strong>Where was it held?</strong></li>
+          <li><strong>What did the guests wear?</strong></li>
+          <li><strong>What food was served?</strong></li>
+          <li><strong>What did people do to celebrate?</strong></li>
+        </ol>
+      </div>
+      <div class="tip-box">
+        <p style="font-size: 1rem;"><strong>Tip:</strong> Listen for key words: <em>wedding, reception, guests, dinner, music, speeches</em></p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 6: GRAMMAR - PASSIVE DISCOVERY ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 6</div>
+      <h2>Grammar Discovery: Passive Voice</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Read these sentences from invitations and announcements.</p>
+      <div style="background: var(--cream); padding: 14px 18px; border-radius: var(--border-radius); margin: 8px 0;">
+        <ul style="font-size: 1.1rem; line-height: 1.8;">
+          <li><em>"The party <strong>will be held</strong> on July 4th."</em></li>
+          <li><em>"The wedding <strong>was organized</strong> by the bride's family."</em></li>
+          <li><em>"All guests <strong>are invited</strong> to the reception."</em></li>
+          <li><em>"The dinner <strong>will be served</strong> at 8pm."</em></li>
+        </ul>
+      </div>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px;">
+        <p style="font-size: 1rem;"><strong>Discuss in pairs:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>Who is doing the action in each sentence?</li>
+          <li>What is the structure of the verb? (be + past participle)</li>
+          <li>Why do we use passive voice in invitations?</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 7: GRAMMAR - PASSIVE PRACTICE ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 7</div>
+      <h2>Grammar Practice: Passive Voice</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Complete the sentences with the correct passive form.</p>
+      <div id="passiveActivity"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" id="checkPassive">Check Answers</button>
+        <button class="btn btn-reset" id="resetPassive">Reset</button>
+      </div>
+      <div class="feedback-text" id="passiveFeedback"></div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 8: GRAMMAR - REPORTED SPEECH DISCOVERY ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 8</div>
+      <h2>Grammar Discovery: Reported Speech</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Read these sentences. What did the people say?</p>
+      <div style="background: var(--cream); padding: 14px 18px; border-radius: var(--border-radius); margin: 8px 0;">
+        <ul style="font-size: 1.1rem; line-height: 1.8;">
+          <li><em>"Julie said <strong>she had</strong> a previous engagement."</em></li>
+          <li><em>"He told me <strong>he would</strong> come to the party."</em></li>
+          <li><em>"She said <strong>she was</strong> feeling unwell."</em></li>
+          <li><em>"They told us <strong>they had already</strong> eaten."</em></li>
+        </ul>
+      </div>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px;">
+        <p style="font-size: 1rem;"><strong>Discuss in pairs:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>What changes happen to the verb tense?</li>
+          <li>What changes happen to pronouns?</li>
+          <li>What is the difference between <em>said</em> and <em>told</em>?</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 9: GRAMMAR - REPORTED SPEECH PRACTICE ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 9</div>
+      <h2>Grammar Practice: Reported Speech</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Change the direct speech to reported speech.</p>
+      <div id="reportedActivity"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" id="checkReported">Check Answers</button>
+        <button class="btn btn-reset" id="resetReported">Reset</button>
+      </div>
+      <div class="feedback-text" id="reportedFeedback"></div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 10: GRAMMAR - CONDITIONALS DISCOVERY ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 10</div>
+      <h2>Grammar Discovery: Present Conditional with Modals</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Read these sentences about invitations and attire.</p>
+      <div style="background: var(--cream); padding: 14px 18px; border-radius: var(--border-radius); margin: 8px 0;">
+        <ul style="font-size: 1.1rem; line-height: 1.8;">
+          <li><em>"If the invitation <strong>says</strong> casual, you <strong>can</strong> dress comfortably."</em></li>
+          <li><em>"If it <strong>rains</strong>, the ceremony <strong>will be moved</strong> indoors."</em></li>
+          <li><em>"If you <strong>are</strong> late, you <strong>may</strong> miss the opening speech."</em></li>
+          <li><em>"If they <strong>invite</strong> us, we <strong>should</strong> bring a gift."</em></li>
+        </ul>
+      </div>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px;">
+        <p style="font-size: 1rem;"><strong>Discuss in pairs:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>What is the structure of these sentences? (If + present simple, modal + infinitive)</li>
+          <li>What do the modals mean? (<em>can</em> = possibility, <em>may</em> = permission/possibility, <em>should</em> = advice, <em>will</em> = certainty)</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 11: GRAMMAR - CONDITIONALS PRACTICE ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 11</div>
+      <h2>Grammar Practice: Conditionals with Modals</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 8px;">Complete the sentences with the correct modal.</p>
+      <div id="conditionalActivity"></div>
+      <div class="btn-row">
+        <button class="btn btn-check" id="checkConditional">Check Answers</button>
+        <button class="btn btn-reset" id="resetConditional">Reset</button>
+      </div>
+      <div class="feedback-text" id="conditionalFeedback"></div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 12: SPEAKING - INVITATIONS ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 12</div>
+      <h2>Speaking: Invitations</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/invitations.png" alt="Invitation conversation">
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: var(--border-radius); margin: 8px 0;">
+        <p style="font-size: 1.05rem;"><strong>Useful Phrases:</strong></p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <div style="flex: 1; min-width: 150px; background: var(--cream); padding: 10px 14px; border-radius: 8px;">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Extending</p>
+            <ul style="font-size: 0.95rem;">
+              <li>"Would you like to...?"</li>
+              <li>"I'd like to invite you to..."</li>
+              <li>"Please join us for..."</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 150px; background: var(--cream); padding: 10px 14px; border-radius: 8px;">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Accepting</p>
+            <ul style="font-size: 0.95rem;">
+              <li>"I'd love to!"</li>
+              <li>"Thank you, I'll be there."</li>
+              <li>"I'd be delighted to."</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 150px; background: var(--cream); padding: 10px 14px; border-radius: 8px;">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Declining</p>
+            <ul style="font-size: 0.95rem;">
+              <li>"I'm afraid I can't..."</li>
+              <li>"I'm sorry, I have another engagement."</li>
+              <li>"Thank you, but I'm busy."</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--school-bus-yellow);">
+        <p style="font-size: 1rem;"><strong>Role Play:</strong> Invite your partner to a special occasion. Use the phrases above.</p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 13: COMPLIMENTS ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 13</div>
+      <h2>Giving and Responding to Compliments</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/compliments.png" alt="Compliments conversation">
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: var(--border-radius); margin: 8px 0;">
+        <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+          <div style="flex: 1; min-width: 180px; background: var(--cream); padding: 10px 14px; border-radius: 8px;">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Giving Compliments</p>
+            <ul style="font-size: 0.95rem; line-height: 1.6;">
+              <li>"You look stunning in that dress!"</li>
+              <li>"That's a gorgeous outfit."</li>
+              <li>"That's a striking necklace!"</li>
+              <li>"You look fabulous."</li>
+              <li>"That was a wonderful dinner!"</li>
+              <li>"Your ring is magnificent."</li>
+            </ul>
+          </div>
+          <div style="flex: 1; min-width: 180px; background: var(--cream); padding: 10px 14px; border-radius: 8px;">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Responding</p>
+            <ul style="font-size: 0.95rem; line-height: 1.6;">
+              <li>"Thank you!"</li>
+              <li>"That's so kind of you!"</li>
+              <li>"Thank you, I got it at..."</li>
+              <li>"You're very sweet."</li>
+              <li>"I'm glad you like it!"</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--school-bus-yellow);">
+        <p style="font-size: 1rem;"><strong>Practice:</strong> Give a compliment to your partner. Your partner should respond.</p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 14: SPEAKING - INVITATIONS & COMPLIMENTS ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 14</div>
+      <h2>Speaking: Invitations & Compliments</h2>
+      <div style="background: var(--light-grey); padding: 14px 18px; border-radius: var(--border-radius); margin-bottom: 10px;">
+        <p style="font-size: 1.05rem;"><strong>Role Play:</strong> Work in pairs. Use the scenarios below.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
+          <div style="flex: 1; min-width: 180px; background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--baltic-blue);">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Scenario 1</p>
+            <p style="font-size: 0.95rem;">Invite your friend to a wedding. Describe the wedding. Give a compliment about your friend's outfit.</p>
+          </div>
+          <div style="flex: 1; min-width: 180px; background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--school-bus-yellow);">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Scenario 2</p>
+            <p style="font-size: 0.95rem;">Invite your partner to a birthday party. Tell them what to wear. Give a compliment about their cooking.</p>
+          </div>
+          <div style="flex: 1; min-width: 180px; background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--pure-red);">
+            <p style="font-weight: 600; color: var(--baltic-blue);">Scenario 3</p>
+            <p style="font-size: 0.95rem;">Invite your colleague to a dinner party. Describe the food. Give a compliment about their work.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <p style="font-size: 1rem;"><strong>Use grammar:</strong> Passive (<em>"The party will be held..."</em>), Reported speech (<em>"She said she would come..."</em>)</p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 15: WRITING - INVITATION EMAIL ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 15</div>
+      <h2>Writing: Invitation Email</h2>
+      <img src="https://raw.githubusercontent.com/InglesLibre/ImageRepo/main/invitationWrite.png" alt="Writing invitation">
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: var(--border-radius); margin: 8px 0;">
+        <p style="font-size: 1.05rem;"><strong>Task:</strong> Write an email inviting a friend to a special occasion.</p>
+        <p style="font-size: 1rem; margin-top: 4px;"><strong>Include:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>The occasion and date</li>
+          <li>The location</li>
+          <li>What to wear</li>
+          <li>A request to RSVP</li>
+          <li>Use at least <strong>2 passive voice</strong> sentences</li>
+          <li>Use <strong>1 reported speech</strong> sentence</li>
+        </ul>
+      </div>
+      <div style="background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--school-bus-yellow);">
+        <p style="font-size: 1rem;"><strong>Useful phrases:</strong></p>
+        <p style="font-size: 0.95rem;"><em>"I would like to invite you to..."</em> / <em>"The party will be held on..."</em> / <em>"Please let me know if you can come."</em></p>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 16: READING - PARTY INVITATION ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 16</div>
+      <h2>Reading: A Party Invitation</h2>
+      <div style="background: var(--cream); padding: 16px 20px; border-radius: var(--border-radius); border: 1px solid var(--warm-grey); margin: 8px 0;">
+        <p style="font-size: 1.05rem;"><strong>You are cordially invited to attend the History Department Luncheon</strong></p>
+        <p style="font-size: 0.95rem;">The guest speakers will be: Janice M. Sumner, President of Delaware University; Thomas B. Harrington, Dean; J.D. McWilliams, History Department Chair.</p>
+        <p style="font-size: 0.95rem;"><strong>Date:</strong> Tuesday, November 4<br>
+        <strong>Time:</strong> 12:00 pm - 1:30 pm<br>
+        <strong>Location:</strong> Jenkinson Dining Hall<br>
+        <strong>RSVP:</strong> events@delaware.edu</p>
+      </div>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: 8px;">
+        <p style="font-size: 1rem;"><strong>Comprehension Questions:</strong></p>
+        <ol style="font-size: 1rem; line-height: 1.8;">
+          <li>What is the occasion?</li>
+          <li>When is it?</li>
+          <li>Where is it?</li>
+          <li>Who are the guest speakers?</li>
+          <li>How do you RSVP?</li>
+        </ol>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 17: ERROR CORRECTION & REFLECTION ===== -->
+    <section class="slide">
+      <div class="slide-number">Slide 17</div>
+      <h2>Error Correction and Reflection</h2>
+      <div style="background: var(--light-grey); padding: 12px 16px; border-radius: var(--border-radius); margin-bottom: 10px;">
+        <p style="font-size: 1.05rem;"><strong>Common Errors to Avoid:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li><strong>Passive:</strong> Incorrect: <em>"The party will hold on July 4th."</em> → Correct: <em>"The party will be held on July 4th."</em></li>
+          <li><strong>Reported Speech:</strong> Incorrect: <em>"She said she has a previous engagement."</em> → Correct: <em>"She said she had a previous engagement."</em></li>
+          <li><strong>Conditionals:</strong> Incorrect: <em>"If the invitation says casual, you can't dress comfortably."</em> → Correct: <em>"If the invitation says casual, you can dress comfortably."</em></li>
+        </ul>
+      </div>
+      <div style="background: var(--cream); padding: 12px 16px; border-radius: 8px; border-left: 4px solid var(--baltic-blue);">
+        <p style="font-size: 1.05rem;"><strong>Self-Check Questions:</strong></p>
+        <ul style="font-size: 1rem; line-height: 1.8;">
+          <li>Can I use passive voice to describe events and invitations?</li>
+          <li>Can I report what someone said using reported speech?</li>
+          <li>Can I give advice or make suggestions using conditionals with modals?</li>
+          <li>Can I extend and respond to invitations politely?</li>
+          <li>Can I give and respond to compliments?</li>
+        </ul>
+      </div>
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next">Next</button>
+      </div>
+    </section>
+
+    <!-- ===== SLIDE 18: TEACHER NOTES ===== -->
+    <section class="slide teacher-notes">
+      <div class="slide-number">Slide 18</div>
+      <h3>Special Occasions - Teacher Notes</h3>
+      <h4>Aims</h4>
+      <ul>
+        <li>Talk about special occasions</li>
+        <li>Extend and respond to invitations</li>
+        <li>Give and respond to compliments</li>
+        <li>Use passive voice, reported speech, and conditionals with modals</li>
+      </ul>
+      <h4>Timing</h4>
+      <p>180 minutes (3 hours) with breaks</p>
+      <h4>Procedure</h4>
+      <ol>
+        <li><strong>Introduction and Warm-Up (15 min):</strong> Discuss special occasions in pairs. Elicit answers.</li>
+        <li><strong>Vocabulary: Occasions (10 min):</strong> Match activity. Check answers.</li>
+        <li><strong>Vocabulary: Attire (10 min):</strong> Discuss different dress codes. Practice describing outfits.</li>
+        <li><strong>Listening (12 min):</strong> Listen to the description and answer questions.</li>
+        <li><strong>Passive Voice Discovery & Practice (20 min):</strong> Discover the structure. Complete gap-fill.</li>
+        <li><strong>Reported Speech Discovery & Practice (20 min):</strong> Discover the structure. Complete gap-fill.</li>
+        <li><strong>Conditionals Discovery & Practice (20 min):</strong> Discover the structure. Complete gap-fill.</li>
+        <li><strong>Break (15 min)</strong></li>
+        <li><strong>Invitations Speaking (15 min):</strong> Practice extending and responding to invitations.</li>
+        <li><strong>Compliments (10 min):</strong> Learn phrases for giving and responding to compliments.</li>
+        <li><strong>Invitations & Compliments Role Play (15 min):</strong> Scenarios practice.</li>
+        <li><strong>Writing: Invitation Email (12 min):</strong> Students write an invitation email.</li>
+        <li><strong>Reading (10 min):</strong> Read the invitation and answer comprehension questions.</li>
+        <li><strong>Error Correction (8 min):</strong> Review common errors. Self-check questions.</li>
+      </ol>
+      <h4>Answers</h4>
+      <p><strong>Occasions Matching:</strong> 1-wedding, 2-birthday party, 3-anniversary, 4-graduation, 5-engagement party, 6-dinner party, 7-retirement party</p>
+      <p><strong>Passive Voice:</strong> 1-will be held, 2-was organized, 3-are invited, 4-will be served, 5-was given, 6-have been sent</p>
+      <p><strong>Reported Speech:</strong> 1-she had, 2-he would, 3-she was, 4-they had already, 5-he could, 6-she wanted</p>
+      <p><strong>Conditionals:</strong> 1-can, 2-may, 3-should, 4-can, 5-may, 6-should</p>
+      <h4>Checking Questions</h4>
+      <ul>
+        <li>What is passive voice?</li>
+        <li>When do we use reported speech?</li>
+        <li>What modals can we use in conditionals?</li>
+      </ul>
+      <h4>Likely Errors</h4>
+      <ul>
+        <li>Forgetting the auxiliary verb in passive voice (be)</li>
+        <li>Not changing the verb tense in reported speech</li>
+        <li>Using the wrong modal in conditionals</li>
+      </ul>
+      <h4>Extension Ideas</h4>
+      <ul>
+        <li>Write a thank-you email after a party</li>
+        <li>Design an invitation card</li>
+        <li>Role play a conversation at a party giving compliments</li>
+      </ul>
+
+      <!-- ===== CC LICENSE ===== -->
+      <div class="cc-license">
+        <a href="https://example.com">ESL Classroom resources</a> © 1999 by <a href="https://example.com">InglesLibrePe@gmail.com</a> is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Attribution">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="ShareAlike">
+      </div>
+
+      <div class="slide-nav">
+        <button class="btn-nav slide-prev" data-action="prev">Previous</button>
+        <button class="btn-nav slide-next" data-action="next" disabled>Next</button>
+      </div>
+    </section>
+
+  </div><!-- end #slides -->
+</div><!-- end .presentation-wrapper -->
+
+<script>
+  (function() {
+    // ===== SLIDE NAVIGATION =====
+    function initNavigation() {
+      var slides = document.querySelectorAll('.slide');
+      var total = slides.length;
+      var current = 0;
+      slides.forEach(function(s, i) { if (s.classList.contains('active')) current = i; });
+
+      function goTo(index) {
+        if (index < 0 || index >= total) return;
+        slides.forEach(function(s) { s.classList.remove('active'); });
+        slides[index].classList.add('active');
+        current = index;
+
+        var prevBtns = document.querySelectorAll('.slide-prev');
+        var nextBtns = document.querySelectorAll('.slide-next');
+        prevBtns.forEach(function(b) { b.disabled = (current === 0); });
+        nextBtns.forEach(function(b) { b.disabled = (current === total - 1); });
+      }
+
+      document.querySelectorAll('.slide-prev').forEach(function(b) {
+        b.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (current > 0) goTo(current - 1);
+        });
+      });
+
+      document.querySelectorAll('.slide-next').forEach(function(b) {
+        b.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (current < total - 1) goTo(current + 1);
+        });
+      });
+
+      var prevBtns = document.querySelectorAll('.slide-prev');
+      var nextBtns = document.querySelectorAll('.slide-next');
+      prevBtns.forEach(function(b) { b.disabled = (current === 0); });
+      nextBtns.forEach(function(b) { b.disabled = (current === total - 1); });
+    }
+
+    // ===== GENERIC DROPDOWN ACTIVITY =====
+    function createDropdownActivity(containerId, data, correctAnswers, checkBtnId, resetBtnId, feedbackId) {
+      var container = document.getElementById(containerId);
+      var selects = [];
+
+      container.innerHTML = '';
+
+      data.forEach(function(item, index) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'activity-item';
+
+        var span = document.createElement('span');
+        span.innerHTML = item.prompt;
+        wrapper.appendChild(span);
+
+        var select = document.createElement('select');
+        select.id = containerId + '_' + index;
+
+        var option = document.createElement('option');
+        option.value = '';
+        option.textContent = 'Select...';
+        select.appendChild(option);
+
+        var shuffled = item.options.slice();
+        for (var j = shuffled.length - 1; j > 0; j--) {
+          var k = Math.floor(Math.random() * (j + 1));
+          var temp = shuffled[j];
+          shuffled[j] = shuffled[k];
+          shuffled[k] = temp;
+        }
+
+        shuffled.forEach(function(opt) {
+          var optEl = document.createElement('option');
+          optEl.value = opt;
+          optEl.textContent = opt;
+          select.appendChild(optEl);
+        });
+
+        selects.push(select);
+        wrapper.appendChild(select);
+        container.appendChild(wrapper);
+      });
+
+      var checkBtn = document.getElementById(checkBtnId);
+      var resetBtn = document.getElementById(resetBtnId);
+      var feedback = document.getElementById(feedbackId);
+
+      checkBtn.addEventListener('click', function() {
+        var correct = 0;
+        selects.forEach(function(sel, idx) {
+          if (sel.value === correctAnswers[idx]) {
+            correct++;
+            sel.className = 'correct';
+          } else {
+            sel.className = 'incorrect';
+          }
+        });
+        feedback.innerHTML = '<p>You got <strong>' + correct + '</strong> out of ' + correctAnswers.length + ' correct.</p>';
+        feedback.style.display = 'block';
+        if (correct === correctAnswers.length) {
+          feedback.innerHTML += '<p style="color:#065e93;font-weight:600;">Perfect!</p>';
+        }
+      });
+
+      resetBtn.addEventListener('click', function() {
+        selects.forEach(function(sel) {
+          sel.value = '';
+          sel.className = '';
+        });
+        feedback.innerHTML = '';
+        feedback.style.display = 'none';
+      });
+    }
+
+    // ===== SLIDE 3: OCCASIONS =====
+    function initOccasions() {
+      var data = [
+        { prompt: '<strong>1.</strong> A ceremony where two people get married', options: ['wedding', 'birthday party', 'anniversary'] },
+        { prompt: '<strong>2.</strong> A celebration for the day someone was born', options: ['graduation', 'birthday party', 'engagement party'] },
+        { prompt: '<strong>3.</strong> The yearly celebration of a special date', options: ['anniversary', 'wedding', 'dinner party'] },
+        { prompt: '<strong>4.</strong> A ceremony when someone completes their studies', options: ['graduation', 'retirement party', 'baby shower'] },
+        { prompt: '<strong>5.</strong> A party to celebrate a couple\'s decision to marry', options: ['engagement party', 'wedding', 'dinner party'] },
+        { prompt: '<strong>6.</strong> A formal meal with invited guests', options: ['dinner party', 'gala', 'banquet'] },
+        { prompt: '<strong>7.</strong> A party to celebrate someone leaving their job', options: ['retirement party', 'graduation', 'baby shower'] }
+      ];
+      var correctAnswers = ['wedding', 'birthday party', 'anniversary', 'graduation', 'engagement party', 'dinner party', 'retirement party'];
+      createDropdownActivity('occasionActivity', data, correctAnswers, 'checkOccasions', 'resetOccasions', 'occasionFeedback');
+    }
+
+    // ===== SLIDE 7: PASSIVE VOICE =====
+    function initPassive() {
+      var data = [
+        { prompt: '<strong>1.</strong> The party ________ on July 4th.', options: ['will hold', 'will be held', 'is holding'] },
+        { prompt: '<strong>2.</strong> The wedding ________ by the bride\'s family.', options: ['was organized', 'organized', 'was organizing'] },
+        { prompt: '<strong>3.</strong> All guests ________ to the reception.', options: ['invite', 'are invited', 'are inviting'] },
+        { prompt: '<strong>4.</strong> The dinner ________ at 8pm.', options: ['will serve', 'will be served', 'is serving'] },
+        { prompt: '<strong>5.</strong> A beautiful gift ________ to the couple.', options: ['was given', 'gave', 'was giving'] },
+        { prompt: '<strong>6.</strong> The invitations ________ already.', options: ['have sent', 'have been sent', 'are sending'] }
+      ];
+      var correctAnswers = ['will be held', 'was organized', 'are invited', 'will be served', 'was given', 'have been sent'];
+      createDropdownActivity('passiveActivity', data, correctAnswers, 'checkPassive', 'resetPassive', 'passiveFeedback');
+    }
+
+    // ===== SLIDE 9: REPORTED SPEECH =====
+    function initReported() {
+      var data = [
+        { prompt: '<strong>1.</strong> "I have a previous engagement." → Julie said ________ a previous engagement.', options: ['she has', 'she had', 'she have'] },
+        { prompt: '<strong>2.</strong> "I will come to the party." → He told me ________ come to the party.', options: ['he will', 'he would', 'he is'] },
+        { prompt: '<strong>3.</strong> "I am feeling unwell." → She said ________ feeling unwell.', options: ['she is', 'she was', 'she were'] },
+        { prompt: '<strong>4.</strong> "We have already eaten." → They told us ________ already eaten.', options: ['they have', 'they had', 'they are'] },
+        { prompt: '<strong>5.</strong> "I can help you." → He said ________ help me.', options: ['he can', 'he could', 'he will'] },
+        { prompt: '<strong>6.</strong> "I want to go." → She said ________ to go.', options: ['she wants', 'she wanted', 'she want'] }
+      ];
+      var correctAnswers = ['she had', 'he would', 'she was', 'they had', 'he could', 'she wanted'];
+      createDropdownActivity('reportedActivity', data, correctAnswers, 'checkReported', 'resetReported', 'reportedFeedback');
+    }
+
+    // ===== SLIDE 11: CONDITIONALS =====
+    function initConditional() {
+      var data = [
+        { prompt: '<strong>1.</strong> If the invitation says casual, you ________ dress comfortably.', options: ['can', 'may', 'should'] },
+        { prompt: '<strong>2.</strong> If it rains, the ceremony ________ be moved indoors.', options: ['can', 'may', 'will'] },
+        { prompt: '<strong>3.</strong> If you are late, you ________ miss the opening speech.', options: ['can', 'may', 'will'] },
+        { prompt: '<strong>4.</strong> If they invite us, we ________ bring a gift.', options: ['can', 'may', 'should'] },
+        { prompt: '<strong>5.</strong> If you want to sit together, you ________ arrive early.', options: ['can', 'may', 'should'] },
+        { prompt: '<strong>6.</strong> If she is not feeling well, she ________ stay home.', options: ['can', 'may', 'should'] }
+      ];
+      var correctAnswers = ['can', 'will', 'may', 'should', 'should', 'should'];
+      createDropdownActivity('conditionalActivity', data, correctAnswers, 'checkConditional', 'resetConditional', 'conditionalFeedback');
+    }
+
+    // ===== INIT =====
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        initNavigation();
+        initOccasions();
+        initPassive();
+        initReported();
+        initConditional();
+      });
+    } else {
+      initNavigation();
+      initOccasions();
+      initPassive();
+      initReported();
+      initConditional();
+    }
+  })();
+</script>
+</body>
+</html>
+```
